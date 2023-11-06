@@ -19033,24 +19033,24 @@
         },
         {
             "name": "spryker/cms",
-            "version": "7.11.1",
+            "version": "7.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/cms.git",
-                "reference": "34ed42ef0ad6e34f91d5f6dd765e5d8de2ad009e"
+                "reference": "901662d38638a67933f45efd111556bc3116c370"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/cms/zipball/34ed42ef0ad6e34f91d5f6dd765e5d8de2ad009e",
-                "reference": "34ed42ef0ad6e34f91d5f6dd765e5d8de2ad009e",
+                "url": "https://api.github.com/repos/spryker/cms/zipball/901662d38638a67933f45efd111556bc3116c370",
+                "reference": "901662d38638a67933f45efd111556bc3116c370",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4",
+                "php": ">=8.0",
                 "spryker/category": "^3.0.0 || ^4.0.0 || ^5.0.0",
                 "spryker/cms-extension": "^1.1.0",
                 "spryker/glossary": "^3.1.0",
-                "spryker/gui": "^3.42.0",
+                "spryker/gui": "^3.48.0",
                 "spryker/kernel": "^3.30.0",
                 "spryker/locale": "^3.0.0",
                 "spryker/propel-orm": "^1.0.0",
@@ -19097,9 +19097,9 @@
             ],
             "description": "Cms module",
             "support": {
-                "source": "https://github.com/spryker/cms/tree/7.11.1"
+                "source": "https://github.com/spryker/cms/tree/7.12.0"
             },
-            "time": "2022-07-06T10:35:41+00:00"
+            "time": "2023-03-13T13:20:27+00:00"
         },
         {
             "name": "spryker/cms-block",
@@ -19327,23 +19327,23 @@
         },
         {
             "name": "spryker/cms-block-gui",
-            "version": "2.9.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/cms-block-gui.git",
-                "reference": "3a1deae431f0089142602db60fd0b6a0691d21d5"
+                "reference": "90391049ef610848c8a5a134479ff48572c06902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/cms-block-gui/zipball/3a1deae431f0089142602db60fd0b6a0691d21d5",
-                "reference": "3a1deae431f0089142602db60fd0b6a0691d21d5",
+                "url": "https://api.github.com/repos/spryker/cms-block-gui/zipball/90391049ef610848c8a5a134479ff48572c06902",
+                "reference": "90391049ef610848c8a5a134479ff48572c06902",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4",
+                "php": ">=8.0",
                 "spryker/cms-block": "^2.0.0 || ^3.0.0",
                 "spryker/cms-block-gui-extension": "^1.0.0",
-                "spryker/gui": "^3.45.0",
+                "spryker/gui": "^3.48.0",
                 "spryker/kernel": "^3.52.0",
                 "spryker/locale": "^3.0.0",
                 "spryker/propel-orm": "^1.0.0",
@@ -19384,9 +19384,9 @@
             ],
             "description": "CmsBlockGui module",
             "support": {
-                "source": "https://github.com/spryker/cms-block-gui/tree/2.9.0"
+                "source": "https://github.com/spryker/cms-block-gui/tree/2.10.0"
             },
-            "time": "2022-09-19T06:48:51+00:00"
+            "time": "2023-03-13T13:20:27+00:00"
         },
         {
             "name": "spryker/cms-block-gui-extension",
@@ -20060,25 +20060,25 @@
         },
         {
             "name": "spryker/cms-gui",
-            "version": "5.10.0",
+            "version": "5.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/cms-gui.git",
-                "reference": "4febe0821cfaeab2316efa54151a2583047245f2"
+                "reference": "2050c26c2fbfda84737b7d51c559c6c338abfb72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/cms-gui/zipball/4febe0821cfaeab2316efa54151a2583047245f2",
-                "reference": "4febe0821cfaeab2316efa54151a2583047245f2",
+                "url": "https://api.github.com/repos/spryker/cms-gui/zipball/2050c26c2fbfda84737b7d51c559c6c338abfb72",
+                "reference": "2050c26c2fbfda84737b7d51c559c6c338abfb72",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4",
+                "php": ">=8.0",
                 "spryker/application": "^3.2.0",
                 "spryker/cms": "^7.0.0",
                 "spryker/cms-gui-extension": "^1.0.0",
                 "spryker/glossary": "^3.0.0",
-                "spryker/gui": "^3.45.0",
+                "spryker/gui": "^3.48.0",
                 "spryker/kernel": "^3.52.0",
                 "spryker/locale": "^3.0.0",
                 "spryker/symfony": "^3.0.0",
@@ -20118,9 +20118,9 @@
             ],
             "description": "CmsGui module",
             "support": {
-                "source": "https://github.com/spryker/cms-gui/tree/5.10.0"
+                "source": "https://github.com/spryker/cms-gui/tree/5.11.0"
             },
-            "time": "2022-09-19T06:48:51+00:00"
+            "time": "2023-03-13T13:20:27+00:00"
         },
         {
             "name": "spryker/cms-gui-extension",
@@ -29292,16 +29292,16 @@
         },
         {
             "name": "spryker/gui",
-            "version": "3.46.0",
+            "version": "3.48.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/gui.git",
-                "reference": "780ac49b7cbb1b5db3b812f37d414ecca57907b8"
+                "reference": "e32ef19429945725010b73cf7693f44d180e527a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/gui/zipball/780ac49b7cbb1b5db3b812f37d414ecca57907b8",
-                "reference": "780ac49b7cbb1b5db3b812f37d414ecca57907b8",
+                "url": "https://api.github.com/repos/spryker/gui/zipball/e32ef19429945725010b73cf7693f44d180e527a",
+                "reference": "e32ef19429945725010b73cf7693f44d180e527a",
                 "shasum": ""
             },
             "require": {
@@ -29316,7 +29316,7 @@
                 "spryker/twig-extension": "^1.0.0",
                 "spryker/util-number": "^1.0.0",
                 "spryker/util-sanitize": "^2.0.0",
-                "spryker/util-sanitize-xss": "^1.0.0",
+                "spryker/util-sanitize-xss": "^1.1.0",
                 "spryker/util-text": "^1.1.0"
             },
             "require-dev": {
@@ -29349,9 +29349,9 @@
             ],
             "description": "Gui module",
             "support": {
-                "source": "https://github.com/spryker/gui/tree/3.46.0"
+                "source": "https://github.com/spryker/gui/tree/3.48.0"
             },
-            "time": "2022-12-12T13:39:13+00:00"
+            "time": "2023-03-13T13:20:27+00:00"
         },
         {
             "name": "spryker/guzzle",
@@ -50613,20 +50613,20 @@
         },
         {
             "name": "spryker/util-sanitize-xss",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/util-sanitize-xss.git",
-                "reference": "2d6829bc62f1857b92ec49975364669b3470130c"
+                "reference": "1ddfcd4b092386e9f6057cd6c86b7c8650ab941e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/util-sanitize-xss/zipball/2d6829bc62f1857b92ec49975364669b3470130c",
-                "reference": "2d6829bc62f1857b92ec49975364669b3470130c",
+                "url": "https://api.github.com/repos/spryker/util-sanitize-xss/zipball/1ddfcd4b092386e9f6057cd6c86b7c8650ab941e",
+                "reference": "1ddfcd4b092386e9f6057cd6c86b7c8650ab941e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2",
+                "php": ">=8.0",
                 "spryker/kernel": "^3.33.0",
                 "voku/anti-xss": "^4.1.20"
             },
@@ -50651,9 +50651,9 @@
             ],
             "description": "UtilSanitizeXss module",
             "support": {
-                "source": "https://github.com/spryker/util-sanitize-xss/tree/master"
+                "source": "https://github.com/spryker/util-sanitize-xss/tree/1.1.0"
             },
-            "time": "2019-12-24T15:02:15+00:00"
+            "time": "2023-03-13T13:20:27+00:00"
         },
         {
             "name": "spryker/util-text",
