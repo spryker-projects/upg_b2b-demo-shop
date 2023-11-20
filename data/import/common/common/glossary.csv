@@ -3823,3 +3823,5 @@ product_configuration.response.validation.error,Failed to validate product confi
 product_configuration.response.validation.error,Die Antwort vom Produktkonfigurator konnte nicht validiret werden.,de_DE
 product_configuration.error.configuration_not_found,Product configuration was not found for product '%sku%'.,en_US
 product_configuration.error.configuration_not_found,Produktkonfiguration wurde nicht für Produkt '%sku%' gefunden.,de_DE
+store.validation.store_not_found,Store not found,en_US
+store.validation.store_not_found,Store nicht gefunden,de_DE

@@ -90,6 +90,8 @@ class MessageBrokerDependencyProvider extends SprykerMessageBrokerDependencyProv
             new TimestampMessageAttributeProviderPlugin(),
             new CurrentStoreReferenceMessageAttributeProviderPlugin(),
             new AccessTokenMessageAttributeProviderPlugin(),
+            new Spryker\Zed\MessageBroker\Communication\Plugin\MessageBroker\TransactionIdMessageAttributeProviderPlugin(),
+            new Spryker\Zed\Session\Communication\Plugin\MessageBroker\SessionTrackingIdMessageAttributeProviderPlugin(),
         ];
     }
 
