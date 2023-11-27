@@ -47,6 +47,7 @@ class CategoryDependencyProvider extends SprykerDependencyProvider
             new UpdateProductCategoryRelationPlugin(),
             new UpdateNavigationRelationPlugin(),
             new CmsBlockCategoryCategoryRelationPlugin(),
+            new Spryker\Zed\ProductCategory\Communication\Plugin\Category\ProductUpdateEventTriggerCategoryRelationUpdatePlugin(),
         ];
     }
 

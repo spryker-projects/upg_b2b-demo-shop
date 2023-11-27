@@ -149,4 +149,14 @@ class OauthDependencyProvider extends SprykerOauthDependencyProvider
             new OauthRefreshTokensReaderPlugin(),
         ];
     }
+    /**
+     * @return array<\Spryker\Zed\OauthExtension\Dependency\Plugin\OauthRequestGrantTypeConfigurationProviderPluginInterface>
+     */
+    protected function getOauthRequestGrantTypeConfigurationProviderPlugins() : array
+    {
+        return [
+            new Spryker\Zed\OauthCodeFlow\Communication\Plugin\Oauth\UserAuthCodeOauthRequestGrantTypeConfigurationProviderPlugin(),
+            new Spryker\Zed\OauthCodeFlow\Communication\Plugin\Oauth\CustomerAuthCodeOauthRequestGrantTypeConfigurationProviderPlugin(),
+        ];
+    }
 }
