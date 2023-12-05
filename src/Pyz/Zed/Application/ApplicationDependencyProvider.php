@@ -61,6 +61,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
             new ValidatorApplicationPlugin(),
             new SecurityApplicationPlugin(),
             new NumberFormatterApplicationPlugin(),
+            new Spryker\Zed\Store\Communication\Plugin\Application\BackofficeStoreApplicationPlugin(),
         ];
 
         if (class_exists(WebProfilerApplicationPlugin::class)) {
@@ -83,6 +84,8 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
             new PropelApplicationPlugin(),
             new BackendGatewayRouterApplicationPlugin(),
             new HttpApplicationPlugin(),
+            new Spryker\Zed\Store\Communication\Plugin\Application\StoreBackendGatewayApplicationPlugin(),
+            new Spryker\Zed\ZedRequest\Communication\Plugin\Application\RequestBackendGatewayApplicationPlugin(),
         ];
     }
 

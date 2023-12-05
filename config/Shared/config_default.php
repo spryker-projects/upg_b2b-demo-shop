@@ -710,3 +710,26 @@ $config[AppCatalogGuiConstants::OAUTH_OPTION_AUDIENCE] = 'aop-atrs';
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::PROVIDER_NAME;
 $config[OauthClientConstants::OAUTH_GRANT_TYPE_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::GRANT_TYPE_CLIENT_CREDENTIALS;
 $config[OauthClientConstants::OAUTH_OPTION_AUDIENCE_FOR_PAYMENT_AUTHORIZE] = 'aop-app';
+
+$config[\Spryker\Shared\MessageBroker\MessageBrokerConstants::TENANT_IDENTIFIER] = getenv('SPRYKER_TENANT_IDENTIFIER') ?: '';
+
+$config[\Spryker\Shared\MessageBroker\MessageBrokerConstants::CHANNEL_TO_RECEIVER_TRANSPORT_MAP] = [
+    'payment-events' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'payment-method-commands' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'asset-commands' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'product-review-commands' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'product-commands' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'search-commands' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'merchant-commands' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+];
+
+$config[\Spryker\Shared\MessageBroker\MessageBrokerConstants::CHANNEL_TO_SENDER_TRANSPORT_MAP] = [
+    'payment-commands' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'product-events' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'order-events' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+    'merchant-events' => \Spryker\Zed\MessageBrokerAws\MessageBrokerAwsConfig::HTTP_CHANNEL_TRANSPORT,
+];
+
+$config[\Spryker\Shared\MessageBroker\MessageBrokerConstants::IS_ENABLED] = $config[\Spryker\Shared\MessageBrokerAws\MessageBrokerAwsConstants::HTTP_CHANNEL_SENDER_BASE_URL] && $config[\Spryker\Shared\MessageBrokerAws\MessageBrokerAwsConstants::HTTP_CHANNEL_RECEIVER_BASE_URL];
+
+$config[\Spryker\Shared\Product\ProductConstants::TENANT_IDENTIFIER] = getenv('SPRYKER_TENANT_IDENTIFIER') ?: '';

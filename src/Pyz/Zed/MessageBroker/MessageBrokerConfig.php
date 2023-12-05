@@ -18,4 +18,18 @@ class MessageBrokerConfig extends SprykerMessageBrokerConfig
     {
         return ['assets', 'payment', 'product'];
     }
+    /**
+     * Specification:
+     * - Defines attributes which should not be logged.
+     *
+     * @api
+     *
+     * @return array<string>
+     */
+    public function getProtectedMessageAttributes() : array
+    {
+        return [
+            \Generated\Shared\Transfer\MessageAttributesTransfer::AUTHORIZATION,
+        ];
+    }
 }
