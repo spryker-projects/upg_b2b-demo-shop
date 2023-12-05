@@ -19199,25 +19199,26 @@
         },
         {
             "name": "spryker/cms-block",
-            "version": "3.4.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/cms-block.git",
-                "reference": "8894ada787e8801c74d16faa79d4b256bb38d0bb"
+                "reference": "2be6a3b9f2563a392ad14a7a48e32b99c341c978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/cms-block/zipball/8894ada787e8801c74d16faa79d4b256bb38d0bb",
-                "reference": "8894ada787e8801c74d16faa79d4b256bb38d0bb",
+                "url": "https://api.github.com/repos/spryker/cms-block/zipball/2be6a3b9f2563a392ad14a7a48e32b99c341c978",
+                "reference": "2be6a3b9f2563a392ad14a7a48e32b99c341c978",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4",
+                "php": ">=8.0",
+                "spryker/acl-merchant-portal-extension": "^1.0.0",
                 "spryker/cms-block-extension": "^1.0.0",
                 "spryker/event": "^2.0.0",
                 "spryker/glossary": "^3.1.0",
                 "spryker/kernel": "^3.30.0",
-                "spryker/locale": "^3.0.0",
+                "spryker/locale": "^3.0.0 || ^4.0.0",
                 "spryker/propel-orm": "^1.0.0",
                 "spryker/store": "^1.0.0",
                 "spryker/symfony": "^3.0.0",
@@ -19254,9 +19255,9 @@
             ],
             "description": "CmsBlock module",
             "support": {
-                "source": "https://github.com/spryker/cms-block/tree/3.4.0"
+                "source": "https://github.com/spryker/cms-block/tree/3.6.0"
             },
-            "time": "2022-01-04T12:43:20+00:00"
+            "time": "2023-03-31T19:36:11+00:00"
         },
         {
             "name": "spryker/cms-block-category-connector",
@@ -19423,23 +19424,23 @@
         },
         {
             "name": "spryker/cms-block-gui",
-            "version": "2.9.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/cms-block-gui.git",
-                "reference": "3a1deae431f0089142602db60fd0b6a0691d21d5"
+                "reference": "90391049ef610848c8a5a134479ff48572c06902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/cms-block-gui/zipball/3a1deae431f0089142602db60fd0b6a0691d21d5",
-                "reference": "3a1deae431f0089142602db60fd0b6a0691d21d5",
+                "url": "https://api.github.com/repos/spryker/cms-block-gui/zipball/90391049ef610848c8a5a134479ff48572c06902",
+                "reference": "90391049ef610848c8a5a134479ff48572c06902",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4",
+                "php": ">=8.0",
                 "spryker/cms-block": "^2.0.0 || ^3.0.0",
                 "spryker/cms-block-gui-extension": "^1.0.0",
-                "spryker/gui": "^3.45.0",
+                "spryker/gui": "^3.48.0",
                 "spryker/kernel": "^3.52.0",
                 "spryker/locale": "^3.0.0",
                 "spryker/propel-orm": "^1.0.0",
@@ -19480,9 +19481,9 @@
             ],
             "description": "CmsBlockGui module",
             "support": {
-                "source": "https://github.com/spryker/cms-block-gui/tree/2.9.0"
+                "source": "https://github.com/spryker/cms-block-gui/tree/2.10.0"
             },
-            "time": "2022-09-19T06:48:51+00:00"
+            "time": "2023-03-13T13:20:27+00:00"
         },
         {
             "name": "spryker/cms-block-gui-extension",
@@ -20156,25 +20157,25 @@
         },
         {
             "name": "spryker/cms-gui",
-            "version": "5.10.0",
+            "version": "5.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/cms-gui.git",
-                "reference": "4febe0821cfaeab2316efa54151a2583047245f2"
+                "reference": "2050c26c2fbfda84737b7d51c559c6c338abfb72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/cms-gui/zipball/4febe0821cfaeab2316efa54151a2583047245f2",
-                "reference": "4febe0821cfaeab2316efa54151a2583047245f2",
+                "url": "https://api.github.com/repos/spryker/cms-gui/zipball/2050c26c2fbfda84737b7d51c559c6c338abfb72",
+                "reference": "2050c26c2fbfda84737b7d51c559c6c338abfb72",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.4",
+                "php": ">=8.0",
                 "spryker/application": "^3.2.0",
                 "spryker/cms": "^7.0.0",
                 "spryker/cms-gui-extension": "^1.0.0",
                 "spryker/glossary": "^3.0.0",
-                "spryker/gui": "^3.45.0",
+                "spryker/gui": "^3.48.0",
                 "spryker/kernel": "^3.52.0",
                 "spryker/locale": "^3.0.0",
                 "spryker/symfony": "^3.0.0",
@@ -20214,9 +20215,9 @@
             ],
             "description": "CmsGui module",
             "support": {
-                "source": "https://github.com/spryker/cms-gui/tree/5.10.0"
+                "source": "https://github.com/spryker/cms-gui/tree/5.11.0"
             },
-            "time": "2022-09-19T06:48:51+00:00"
+            "time": "2023-03-13T13:20:27+00:00"
         },
         {
             "name": "spryker/cms-gui-extension",
@@ -25989,27 +25990,28 @@
         },
         {
             "name": "spryker/customer",
-            "version": "7.49.0",
+            "version": "7.51.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/customer.git",
-                "reference": "568f76e3e29cd9b6e0b2afa2c50c79323c2c8fc0"
+                "reference": "b89d545f5db90d7dc763d6de739e957025d9bbda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/customer/zipball/568f76e3e29cd9b6e0b2afa2c50c79323c2c8fc0",
-                "reference": "568f76e3e29cd9b6e0b2afa2c50c79323c2c8fc0",
+                "url": "https://api.github.com/repos/spryker/customer/zipball/b89d545f5db90d7dc763d6de739e957025d9bbda",
+                "reference": "b89d545f5db90d7dc763d6de739e957025d9bbda",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.0",
+                "spryker/acl-merchant-portal-extension": "^1.0.0",
                 "spryker/authorization-extension": "^1.0.0",
                 "spryker/checkout-extension": "^1.2.0",
-                "spryker/country": "^3.0.0",
+                "spryker/country": "^3.1.0 || ^4.0.0",
                 "spryker/customer-extension": "^1.4.0",
                 "spryker/gui": "^3.39.0",
-                "spryker/kernel": "^3.52.0",
-                "spryker/locale": "^3.0.0",
+                "spryker/kernel": "^3.72.0",
+                "spryker/locale": "^3.0.0 || ^4.0.0",
                 "spryker/mail": "^4.6.0",
                 "spryker/mail-extension": "^1.0.0",
                 "spryker/propel": "^3.0.0",
@@ -26017,7 +26019,7 @@
                 "spryker/router": "^1.12.0",
                 "spryker/sequence-number": "^3.0.0",
                 "spryker/session": "^3.0.0 || ^4.0.0",
-                "spryker/store": "^1.4.0",
+                "spryker/store": "^1.19.0",
                 "spryker/symfony": "^3.0.0",
                 "spryker/tax-product-connector-extension": "^1.0.0",
                 "spryker/transfer": "^3.27.0",
@@ -26064,9 +26066,9 @@
             ],
             "description": "Customer module",
             "support": {
-                "source": "https://github.com/spryker/customer/tree/7.49.0"
+                "source": "https://github.com/spryker/customer/tree/7.51.6"
             },
-            "time": "2023-02-08T18:31:45+00:00"
+            "time": "2023-11-30T14:09:30+00:00"
         },
         {
             "name": "spryker/customer-access",
