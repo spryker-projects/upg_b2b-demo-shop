@@ -164,6 +164,9 @@ use SprykerEco\Zed\NewRelic\Communication\Console\RecordDeploymentConsole;
 use SprykerSdk\Integrator\Console\ModuleInstallerConsole;
 use SprykerShop\Zed\DateTimeConfiguratorPageExample\Communication\Console\DateTimeProductConfiguratorBuildFrontendConsole;
 use Stecman\Component\Symfony\Console\BashCompletion\CompletionCommand;
+use Spryker\Zed\Oauth\Communication\Console\ScopeCacheCollectorConsole;
+use Spryker\Zed\Development\Communication\Console\GenerateGlueBackendIdeAutoCompletionConsole;
+use Spryker\Zed\Development\Communication\Console\RemoveGlueBackendIdeAutoCompletionConsole;
 
 /**
  * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
@@ -364,10 +367,18 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
             new MessageBrokerWorkerConsole(),
 
             new DateTimeProductConfiguratorBuildFrontendConsole(),
+            new ScopeCacheCollectorConsole(),
         ];
 
         $propelCommands = $container->getLocator()->propel()->facade()->getConsoleCommands();
-        $commands = array_merge($commands, $propelCommands);
+        $commands = array_merge($commands, $propelCommands, [
+            new MessageBrokerDebugConsole(),
+            new MessageBrokerAwsSqsQueuesCreatorConsole(),
+            new MessageBrokerAwsSnsTopicsCreatorConsole(),
+            new MessageBrokerSqsToSnsSubscriberConsole(),
+            new GenerateGlueBackendIdeAutoCompletionConsole(),
+            new RemoveGlueBackendIdeAutoCompletionConsole(),
+        ]);
 
         if ($this->getConfig()->isPyzDevelopmentConsoleCommandsEnabled()) {
             $commands[] = new CodeTestConsole();
@@ -417,6 +428,9 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
             $commands[] = new MessageBrokerAwsSqsQueuesCreatorConsole();
             $commands[] = new MessageBrokerAwsSnsTopicsCreatorConsole();
             $commands[] = new MessageBrokerSqsToSnsSubscriberConsole();
+        }
+        if ($this->getConfig()->isDevelopmentConsoleCommandsEnabled()) {
+            $commands[] = new MessageBrokerDebugConsole();
         }
 
         return $commands;

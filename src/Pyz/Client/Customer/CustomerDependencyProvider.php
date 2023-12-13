@@ -17,6 +17,7 @@ use Spryker\Client\CustomerExtension\Dependency\Plugin\AccessTokenAuthentication
 use Spryker\Client\MultiCart\Plugin\GuestCartSaveCustomerSessionSetPlugin;
 use Spryker\Client\OauthCompanyUser\Plugin\Customer\CompanyUserAccessTokenAuthenticationHandlerPlugin;
 use Spryker\Client\PersistentCart\Plugin\GuestCartUpdateCustomerSessionSetPlugin;
+use Spryker\Client\Customer\Plugin\Customer\CustomerAddressDefaultAddressChangePlugin;
 
 class CustomerDependencyProvider extends SprykerCustomerDependencyProvider
 {
@@ -48,7 +49,7 @@ class CustomerDependencyProvider extends SprykerCustomerDependencyProvider
     protected function getDefaultAddressChangePlugins()
     {
         return [
-            new CustomerAddressSessionUpdatePlugin(),
+            new CustomerAddressDefaultAddressChangePlugin(),
         ];
     }
 

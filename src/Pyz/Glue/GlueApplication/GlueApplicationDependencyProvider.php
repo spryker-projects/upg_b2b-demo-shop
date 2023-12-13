@@ -199,6 +199,19 @@ use Spryker\Glue\ShoppingListsRestApi\ShoppingListsRestApiConfig;
 use Spryker\Glue\StoresRestApi\Plugin\StoresResourceRoutePlugin;
 use Spryker\Glue\UpSellingProductsRestApi\Plugin\GlueApplication\CartUpSellingProductsResourceRoutePlugin;
 use Spryker\Glue\UrlsRestApi\Plugin\GlueApplication\UrlResolverResourceRoutePlugin;
+use Spryker\Glue\CartsRestApi\Plugin\GlueApplication\ExpandRequestWithCustomerReferenceFormattedControllerBeforeActionPlugin;
+use Spryker\Glue\GlueApplication\Plugin\GlueApplication\FallbackStorefrontApiGlueApplicationBootstrapPlugin;
+use Spryker\Glue\GlueBackendApiApplication\Plugin\GlueApplication\BackendApiGlueApplicationBootstrapPlugin;
+use Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication\StorefrontApiGlueApplicationBootstrapPlugin;
+use Spryker\Glue\GlueBackendApiApplication\Plugin\GlueApplication\BackendRouterProviderPlugin;
+use Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication\StorefrontRouterProviderPlugin;
+use Spryker\Glue\GlueBackendApiApplication\Plugin\GlueApplication\ControllerCacheCollectorPlugin;
+use Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication\ControllerCacheCollectorPlugin as SprykerControllerCacheCollectorPlugin;
+use Spryker\Glue\GlueBackendApiApplication\Plugin\GlueApplication\CustomRouteRoutesProviderPlugin;
+use Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication\CustomRouteRoutesProviderPlugin as SprykerCustomRouteRoutesProviderPlugin;
+use Spryker\Glue\GlueBackendApiApplication\Plugin\GlueApplication\ResourcesProviderPlugin;
+use Spryker\Glue\GlueStorefrontApiApplication\Plugin\GlueApplication\ResourcesProviderPlugin as SprykerResourcesProviderPlugin;
+use Spryker\Glue\GlueJsonApiConvention\Plugin\GlueApplication\JsonApiConventionPlugin;
 
 class GlueApplicationDependencyProvider extends SprykerGlueApplicationDependencyProvider
 {
@@ -318,6 +331,7 @@ class GlueApplicationDependencyProvider extends SprykerGlueApplicationDependency
     {
         return [
             new FormattedControllerBeforeActionValidateAccessTokenPlugin(),
+            new ExpandRequestWithCustomerReferenceFormattedControllerBeforeActionPlugin(),
         ];
     }
 
@@ -718,6 +732,66 @@ class GlueApplicationDependencyProvider extends SprykerGlueApplicationDependency
             new EventDispatcherApplicationPlugin(),
             new GlueApplicationApplicationPlugin(),
             new RouterApplicationPlugin(),
+        ];
+    }
+    /**
+     * @return array<\Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\GlueApplicationBootstrapPluginInterface>
+     */
+    protected function getGlueApplicationBootstrapPlugins() : array
+    {
+        return array_merge(parent::getGlueApplicationBootstrapPlugins(), [
+            new FallbackStorefrontApiGlueApplicationBootstrapPlugin(),
+            new BackendApiGlueApplicationBootstrapPlugin(),
+            new StorefrontApiGlueApplicationBootstrapPlugin(),
+        ]);
+    }
+    /**
+     * @return array<\Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ApiApplicationEndpointProviderPluginInterface>
+     */
+    protected function getGlueApplicationRouterProviderPlugins() : array
+    {
+        return [
+            new BackendRouterProviderPlugin(),
+            new StorefrontRouterProviderPlugin(),
+        ];
+    }
+    /**
+     * @return array<\Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ControllerCacheCollectorPluginInterface>
+     */
+    protected function getControllerCacheCollectorPlugins() : array
+    {
+        return [
+            new ControllerCacheCollectorPlugin(),
+            new SprykerControllerCacheCollectorPlugin(),
+        ];
+    }
+    /**
+     * @return array<\Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\RoutesProviderPluginInterface>
+     */
+    protected function getRoutesProviderPlugins() : array
+    {
+        return [
+            new CustomRouteRoutesProviderPlugin(),
+            new SprykerCustomRouteRoutesProviderPlugin(),
+        ];
+    }
+    /**
+     * @return array<\Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourcesProviderPluginInterface>
+     */
+    protected function getResourcesProviderPlugins() : array
+    {
+        return [
+            new ResourcesProviderPlugin(),
+            new SprykerResourcesProviderPlugin(),
+        ];
+    }
+    /**
+     * @return array<\Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ConventionPluginInterface>
+     */
+    protected function getConventionPlugins() : array
+    {
+        return [
+            new JsonApiConventionPlugin(),
         ];
     }
 }
