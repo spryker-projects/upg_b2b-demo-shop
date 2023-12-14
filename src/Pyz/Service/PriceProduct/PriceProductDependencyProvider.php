@@ -12,6 +12,7 @@ use Spryker\Service\PriceProductMerchantRelationship\Plugin\PriceProduct\Merchan
 use Spryker\Service\PriceProductVolume\Plugin\PriceProductExtension\PriceProductVolumeFilterPlugin;
 use Spryker\Service\ProductConfiguration\Plugin\PriceProduct\ProductConfigurationPriceProductFilterPlugin;
 use Spryker\Service\ProductConfiguration\Plugin\PriceProduct\ProductConfigurationVolumePriceProductFilterPlugin;
+use Spryker\Service\PriceProductMerchantRelationship\Plugin\PriceProduct\MerchantRelationshipPreBuildPriceProductGroupKeyPlugin;
 
 class PriceProductDependencyProvider extends SprykerPriceProductDependencyProvider
 {
@@ -32,5 +33,14 @@ class PriceProductDependencyProvider extends SprykerPriceProductDependencyProvid
             new ProductConfigurationVolumePriceProductFilterPlugin(),
             new PriceProductVolumeFilterPlugin(),
         ], parent::getPriceProductDecisionPlugins());
+    }
+    /**
+     * @return array<int, \Spryker\Service\PriceProductExtension\Dependency\Plugin\PreBuildPriceProductGroupKeyPluginInterface>
+     */
+    protected function getPreBuildPriceProductGroupKeyPlugins() : array
+    {
+        return [
+            new MerchantRelationshipPreBuildPriceProductGroupKeyPlugin(),
+        ];
     }
 }

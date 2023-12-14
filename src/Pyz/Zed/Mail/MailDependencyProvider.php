@@ -28,6 +28,22 @@ use Spryker\Zed\Oms\Communication\Plugin\Mail\OrderConfirmationMailTypePlugin;
 use Spryker\Zed\Oms\Communication\Plugin\Mail\OrderShippedMailTypePlugin;
 use Spryker\Zed\SalesInvoice\Communication\Plugin\Mail\OrderInvoiceMailTypePlugin;
 use Spryker\Zed\UserPasswordResetMail\Communication\Plugin\Mail\UserPasswordResetMailTypePlugin;
+use Spryker\Zed\AvailabilityNotification\Communication\Plugin\Mail\AvailabilityNotificationUnsubscribedMailTypeBuilderPlugin;
+use Spryker\Zed\AvailabilityNotification\Communication\Plugin\Mail\AvailabilityNotificationSubscriptionMailTypeBuilderPlugin;
+use Spryker\Zed\AvailabilityNotification\Communication\Plugin\Mail\AvailabilityNotificationMailTypeBuilderPlugin;
+use Spryker\Zed\CompanyMailConnector\Communication\Plugin\Mail\CompanyStatusMailTypeBuilderPlugin;
+use Spryker\Zed\CompanyUserInvitation\Communication\Plugin\Mail\CompanyUserInvitationMailTypeBuilderPlugin;
+use Spryker\Zed\Customer\Communication\Plugin\Mail\CustomerRegistrationMailTypeBuilderPlugin;
+use Spryker\Zed\Customer\Communication\Plugin\Mail\CustomerRegistrationConfirmationMailTypeBuilderPlugin;
+use Spryker\Zed\Customer\Communication\Plugin\Mail\CustomerRestorePasswordMailTypeBuilderPlugin;
+use Spryker\Zed\Customer\Communication\Plugin\Mail\CustomerRestoredPasswordConfirmationMailTypeBuilderPlugin;
+use Spryker\Zed\Newsletter\Communication\Plugin\Mail\NewsletterSubscribedMailTypeBuilderPlugin;
+use Spryker\Zed\Newsletter\Communication\Plugin\Mail\NewsletterUnsubscribedMailTypeBuilderPlugin;
+use Spryker\Zed\Oms\Communication\Plugin\Mail\OrderConfirmationMailTypeBuilderPlugin;
+use Spryker\Zed\Oms\Communication\Plugin\Mail\OrderShippedMailTypeBuilderPlugin;
+use Spryker\Zed\SalesInvoice\Communication\Plugin\Mail\OrderInvoiceMailTypeBuilderPlugin;
+use Spryker\Zed\UserPasswordResetMail\Communication\Plugin\Mail\UserPasswordResetMailTypeBuilderPlugin;
+use Spryker\Zed\SymfonyMailer\Communication\Plugin\Mail\SymfonyMailerProviderPlugin;
 
 class MailDependencyProvider extends SprykerMailDependencyProvider
 {
@@ -72,5 +88,39 @@ class MailDependencyProvider extends SprykerMailDependencyProvider
         });
 
         return $container;
+    }
+    /**
+     * @return array<\Spryker\Zed\MailExtension\Dependency\Plugin\MailTypeBuilderPluginInterface>
+     */
+    protected function getMailTypeBuilderPlugins() : array
+    {
+        return [
+            new AvailabilityNotificationUnsubscribedMailTypeBuilderPlugin(),
+            new AvailabilityNotificationSubscriptionMailTypeBuilderPlugin(),
+            new AvailabilityNotificationMailTypeBuilderPlugin(),
+            new CompanyStatusMailTypeBuilderPlugin(),
+            new CompanyUserInvitationMailTypeBuilderPlugin(),
+            new CustomerRegistrationMailTypeBuilderPlugin(),
+            new CustomerRegistrationConfirmationMailTypeBuilderPlugin(),
+            new CustomerRestorePasswordMailTypeBuilderPlugin(),
+            new CustomerRestoredPasswordConfirmationMailTypeBuilderPlugin(),
+            new NewsletterSubscribedMailTypeBuilderPlugin(),
+            new NewsletterUnsubscribedMailTypeBuilderPlugin(),
+            new OrderConfirmationMailTypeBuilderPlugin(),
+            new OrderShippedMailTypeBuilderPlugin(),
+            new OrderInvoiceMailTypeBuilderPlugin(),
+            new UserPasswordResetMailTypeBuilderPlugin(),
+        ];
+    }
+    /**
+     * @return array
+     */
+    public function extendMailProviderCollection() : array
+    {
+        return [
+            new SymfonyMailerProviderPlugin([
+                MailConfig::MAIL_TYPE_ALL,
+            ]),
+        ];
     }
 }
