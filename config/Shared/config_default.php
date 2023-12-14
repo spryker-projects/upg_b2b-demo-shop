@@ -600,11 +600,14 @@ $config[OmsConstants::ACTIVE_PROCESSES] = [
 ];
 $config[SalesConstants::PAYMENT_METHOD_STATEMACHINE_MAPPING] = [
     PaymentConfig::PAYMENT_FOREIGN_PROVIDER => 'ForeignPaymentB2CStateMachine01',
+    \SprykerEco\Zed\Payone\PayoneConfig::PAYMENT_METHOD_CREDIT_CARD => 'PayoneCreditCardPartialOperations',
+    \SprykerEco\Zed\Payone\PayoneConfig::PAYMENT_METHOD_INSTANT_ONLINE_TRANSFER => 'PayoneOnlineTransferPartialOperations',
 ];
 
 $config[OmsConstants::PROCESS_LOCATION] = [
     OmsConfig::DEFAULT_PROCESS_LOCATION,
     APPLICATION_ROOT_DIR . '/vendor/spryker/sales-payment/config/Zed/Oms',
+    APPLICATION_ROOT_DIR . '/vendor/spryker/payment/config/Zed/Oms',
 ];
 
 // ----------------------------------------------------------------------------
@@ -710,3 +713,23 @@ $config[AppCatalogGuiConstants::OAUTH_OPTION_AUDIENCE] = 'aop-atrs';
 $config[OauthClientConstants::OAUTH_PROVIDER_NAME_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::PROVIDER_NAME;
 $config[OauthClientConstants::OAUTH_GRANT_TYPE_FOR_PAYMENT_AUTHORIZE] = OauthAuth0Config::GRANT_TYPE_CLIENT_CREDENTIALS;
 $config[OauthClientConstants::OAUTH_OPTION_AUDIENCE_FOR_PAYMENT_AUTHORIZE] = 'aop-app';
+
+$config[\Spryker\Shared\GlueBackendApiApplication\GlueBackendApiApplicationConstants::GLUE_BACKEND_API_HOST] = getenv('SPRYKER_GLUE_BACKEND_HOST');
+
+$config[\Spryker\Shared\GlueBackendApiApplication\GlueBackendApiApplicationConstants::PROJECT_NAMESPACES] = [
+    'Pyz',
+];
+
+$config[\Spryker\Shared\GlueStorefrontApiApplication\GlueStorefrontApiApplicationConstants::GLUE_STOREFRONT_API_HOST] = getenv('SPRYKER_GLUE_STOREFRONT_HOST');
+
+$config[\Spryker\Shared\SymfonyMailer\SymfonyMailerConstants::SMTP_PORT] = 1025;
+
+$config[\Spryker\Shared\SymfonyMailer\SymfonyMailerConstants::SMTP_HOST] = getenv('SPRYKER_SMTP_HOST') ?: null;
+
+$config[\Spryker\Shared\SymfonyMailer\SymfonyMailerConstants::SMTP_ENCRYPTION] = getenv('SPRYKER_SMTP_ENCRYPTION') ?: null;
+
+$config[\Spryker\Shared\SymfonyMailer\SymfonyMailerConstants::SMTP_AUTH_MODE] = getenv('SPRYKER_SMTP_AUTH_MODE') ?: null;
+
+$config[\Spryker\Shared\SymfonyMailer\SymfonyMailerConstants::SMTP_USERNAME] = getenv('SPRYKER_SMTP_USERNAME') ?: null;
+
+$config[\Spryker\Shared\SymfonyMailer\SymfonyMailerConstants::SMTP_PASSWORD] = getenv('SPRYKER_SMTP_PASSWORD') ?: null;

@@ -24,6 +24,9 @@ use Spryker\Zed\SalesPayment\Communication\Plugin\Oms\SendEventPaymentRefundPend
 use Spryker\Zed\SalesReturn\Communication\Plugin\Oms\Command\StartReturnCommandPlugin;
 use Spryker\Zed\Shipment\Dependency\Plugin\Oms\ShipmentManualEventGrouperPlugin;
 use Spryker\Zed\Shipment\Dependency\Plugin\Oms\ShipmentOrderMailExpanderPlugin;
+use Spryker\Zed\Payment\Communication\Plugin\Command\SendEventPaymentConfirmationPendingPlugin as SprykerSendEventPaymentConfirmationPendingPlugin;
+use Spryker\Zed\Payment\Communication\Plugin\Command\SendEventPaymentRefundPendingPlugin as SprykerSendEventPaymentRefundPendingPlugin;
+use Spryker\Zed\Payment\Communication\Plugin\Command\SendEventPaymentCancelReservationPendingPlugin as SprykerSendEventPaymentCancelReservationPendingPlugin;
 
 class OmsDependencyProvider extends SprykerOmsDependencyProvider
 {
@@ -135,6 +138,17 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
     {
         return [
             new InitiationTimeoutProcessorPlugin(),
+        ];
+    }
+    /**
+     * @return array
+     */
+    public function extendCommandPlugins() : array
+    {
+        return [
+            new SprykerSendEventPaymentConfirmationPendingPlugin('Payment/SendEventPaymentConfirmationPending'),
+            new SprykerSendEventPaymentRefundPendingPlugin('Payment/SendEventPaymentRefundPending'),
+            new SprykerSendEventPaymentCancelReservationPendingPlugin('Payment/SendEventPaymentCancelReservationPending'),
         ];
     }
 }

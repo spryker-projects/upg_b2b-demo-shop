@@ -20,6 +20,10 @@ use Spryker\Zed\CompanyRoleGui\Communication\Plugin\CompanyUserGui\CompanyRoleCo
 use Spryker\Zed\CompanyRoleGui\Communication\Plugin\CompanyUserGui\CompanyRoleFormExpanderPlugin;
 use Spryker\Zed\CompanyUserGui\CompanyUserGuiDependencyProvider as SprykerCompanyUserGuiDependencyProvider;
 use Spryker\Zed\CompanyUserGuiExtension\Dependency\Plugin\CompanyUserTableDeleteActionPluginInterface;
+use Spryker\Zed\CompanyBusinessUnitGui\Communication\Plugin\CompanyUserGui\CompanyBusinessUnitToCompanyUserFormExpanderPlugin;
+use Spryker\Zed\CompanyGui\Communication\Plugin\CompanyUserGui\CompanyFieldToCompanyUserFormExpanderPlugin;
+use Spryker\Zed\CompanyBusinessUnitGui\Communication\Plugin\CompanyUserGui\CompanyBusinessUnitToCompanyUserAttachCustomerFormExpanderPlugin;
+use Spryker\Zed\CompanyGui\Communication\Plugin\CompanyUserGui\CompanyToCompanyUserAttachCustomerFormExpanderPlugin;
 
 class CompanyUserGuiDependencyProvider extends SprykerCompanyUserGuiDependencyProvider
 {
@@ -51,10 +55,9 @@ class CompanyUserGuiDependencyProvider extends SprykerCompanyUserGuiDependencyPr
     protected function getCompanyUserFormExpanderPlugins(): array
     {
         return [
-            new CompanyToCompanyUserFormExpanderPlugin(),
-            new CompanyBusinessUnitFormExpanderPlugin(),
             new CompanyRoleFormExpanderPlugin(),
-            new CompanyToCompanyUserFormExpanderPlugin(),
+            new CompanyBusinessUnitToCompanyUserFormExpanderPlugin(),
+            new CompanyFieldToCompanyUserFormExpanderPlugin(),
         ];
     }
 
@@ -64,8 +67,9 @@ class CompanyUserGuiDependencyProvider extends SprykerCompanyUserGuiDependencyPr
     protected function getCompanyUserAttachCustomerFormExpanderPlugins(): array
     {
         return [
-            new CompanyBusinessUnitAttachCustomerFormExpanderPlugin(),
             new CompanyRoleAttachCustomerFormExpanderPlugin(),
+            new CompanyBusinessUnitToCompanyUserAttachCustomerFormExpanderPlugin(),
+            new CompanyToCompanyUserAttachCustomerFormExpanderPlugin(),
         ];
     }
 
