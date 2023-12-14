@@ -147,6 +147,7 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             new CategoryPagePublisherTriggerPlugin(),
             new ProductConfigurationPublisherTriggerPlugin(),
             new ProductConcretePublisherTriggerPlugin (),
+            new ProductConcretePublisherTriggerPlugin (),
         ];
     }
 
