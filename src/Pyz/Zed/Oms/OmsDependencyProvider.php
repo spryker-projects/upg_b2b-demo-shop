@@ -149,6 +149,9 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
             new SprykerSendEventPaymentConfirmationPendingPlugin('Payment/SendEventPaymentConfirmationPending'),
             new SprykerSendEventPaymentRefundPendingPlugin('Payment/SendEventPaymentRefundPending'),
             new SprykerSendEventPaymentCancelReservationPendingPlugin('Payment/SendEventPaymentCancelReservationPending'),
+            new SprykerSendEventPaymentConfirmationPendingPlugin('Payment/SendEventPaymentConfirmationPending'),
+            new SprykerSendEventPaymentRefundPendingPlugin('Payment/SendEventPaymentRefundPending'),
+            new SprykerSendEventPaymentCancelReservationPendingPlugin('Payment/SendEventPaymentCancelReservationPending'),
         ];
     }
 }
