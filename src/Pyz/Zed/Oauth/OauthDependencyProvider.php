@@ -28,6 +28,8 @@ use Spryker\Zed\OauthRevoke\Communication\Plugin\Oauth\OauthRefreshTokenReaderPl
 use Spryker\Zed\OauthRevoke\Communication\Plugin\Oauth\OauthRefreshTokenRevokerPlugin;
 use Spryker\Zed\OauthRevoke\Communication\Plugin\Oauth\OauthRefreshTokensReaderPlugin;
 use Spryker\Zed\OauthRevoke\Communication\Plugin\Oauth\OauthRefreshTokensRevokerPlugin;
+use Spryker\Zed\OauthCodeFlow\Communication\Plugin\Oauth\UserAuthCodeOauthRequestGrantTypeConfigurationProviderPlugin;
+use Spryker\Zed\OauthCodeFlow\Communication\Plugin\Oauth\CustomerAuthCodeOauthRequestGrantTypeConfigurationProviderPlugin;
 
 class OauthDependencyProvider extends SprykerOauthDependencyProvider
 {
@@ -147,6 +149,16 @@ class OauthDependencyProvider extends SprykerOauthDependencyProvider
     {
         return [
             new OauthRefreshTokensReaderPlugin(),
+        ];
+    }
+    /**
+     * @return array<\Spryker\Zed\OauthExtension\Dependency\Plugin\OauthRequestGrantTypeConfigurationProviderPluginInterface>
+     */
+    protected function getOauthRequestGrantTypeConfigurationProviderPlugins() : array
+    {
+        return [
+            new UserAuthCodeOauthRequestGrantTypeConfigurationProviderPlugin(),
+            new CustomerAuthCodeOauthRequestGrantTypeConfigurationProviderPlugin(),
         ];
     }
 }
